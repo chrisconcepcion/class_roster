@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/christopher/class_roster/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/MyProject.dir/Main.cpp.o -c /home/christopher/class_roster/Main.cpp",
+  "file": "/home/christopher/class_roster/Main.cpp"
+},
+{
+  "directory": "/home/christopher/class_roster/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/MyProject.dir/roster.cpp.o -c /home/christopher/class_roster/roster.cpp",
+  "file": "/home/christopher/class_roster/roster.cpp"
+},
+{
+  "directory": "/home/christopher/class_roster/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/MyProject.dir/student.cpp.o -c /home/christopher/class_roster/student.cpp",
+  "file": "/home/christopher/class_roster/student.cpp"
+}
+]

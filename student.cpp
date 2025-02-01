@@ -1,7 +1,7 @@
 #include "student.h"
 
 // Constructor. 
-Student::Student(string studentId, string firstName, string lastName, string emailAddress, int age,int daysInCourse[], DegreeProgram degreeProgram)
+Student::Student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram degreeProgram)
 {
     studentId_ = studentId;
     firstName_ = firstName;
@@ -11,8 +11,9 @@ Student::Student(string studentId, string firstName, string lastName, string ema
     degreeProgram_ = degreeProgram;
     
     // Set daysInCourse 
-    for (int i = 0; i < 3, i++;) {
-        daysInCourse_[i] = daysInCourse[i]; 
+    // Copy array elements individually
+    for (int i = 0; i < 3; i++) {
+        daysInCourse_[i] = daysInCourse[i];
     }
 }
 
@@ -49,6 +50,11 @@ string Student::getEmailAddress()
 int Student::getAge()
 {
     return age_;
+}
+
+DegreeProgram Student::getDegreeProgram()
+{
+    return degreeProgram_;
 }
 
 // returns days in course data.
@@ -101,10 +107,8 @@ void Student::print()
     cout << getLastName() << "\t";
     cout << getEmailAddress() << "\t";
     cout << getAge() << "\t";
-    cout << degreePrograms[static_cast<int>(getDegreeProgram())] << "\t";
-    cout << getDaysInCourse()[0] << "\t";
-    cout << getDaysInCourse()[1] << "\t";
-    cout << getDaysInCourse()[2] << "\t";
+    cout << "{" << getDaysInCourse()[0] << ", " << getDaysInCourse()[1]  << ", " << getDaysInCourse()[2] << "}" << "\t";
+    cout << degreePrograms[static_cast<int>(getDegreeProgram())];
 }
 
 // Validates an email address.

@@ -1,0 +1,3 @@
+/home/christopher/class_roster/build/CMakeFiles/MyProject.dir
+/home/christopher/class_roster/build/CMakeFiles/edit_cache.dir
+/home/christopher/class_roster/build/CMakeFiles/rebuild_cache.dir

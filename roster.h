@@ -14,21 +14,18 @@ using std::cout;
 using std::endl;
 
 class Roster {
-    // Constructor
-    Roster();
-
-    // Deconstructor
-    ~Roster();
-
-
     public:
+        // Constructor
+        Student *classRosterArray[5] = {nullptr, nullptr, nullptr, nullptr, nullptr};
+
+        // Deconstructor
+        ~Roster();
+
         void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
         void remove(string studentId);
         void printAll();
         void printAverageDaysInCourse(string studentID);
         void printInvalidEmails();
         void printByDegreeProgram(DegreeProgram degreeProgram);
-
     private:
-        Student *classRosterArray[4] = {nullptr, nullptr, nullptr, nullptr};
 };

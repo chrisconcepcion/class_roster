@@ -1,12 +1,22 @@
 #include "roster.h"
-
 Roster::~Roster()
 {   
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < 5; i++) {
         // Deallocates pointer.
         delete classRosterArray[i];  
         // If instance is still in memory will make it clear the memory is gone.
         classRosterArray[i] = nullptr;
+    }
+}
+
+void Roster::printAll()
+{
+    for(int i = 0; i < 5; i++) {
+        // If classRosterArray element is present then print student data.
+        if (classRosterArray[i] != nullptr) {
+            classRosterArray[i]->print();
+            cout << "\n";
+        }
     }
 }
 
@@ -15,12 +25,13 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
     // Create daysInCourse array from 3 variations of course data.
     int daysInCourse[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
     
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < 5; i++) {
         // If we find an empty slot in array, then we create a student instance and set it in our classRosterArray.
         if (classRosterArray[i] == nullptr) {
             // Create new student from arguments including our daysInCourse array we just created.
             Student *student = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeprogram);
             classRosterArray[i] = student;
+            return;
         }
     }
 
@@ -42,19 +53,11 @@ void Roster::remove(string studentId)
     cout << "Student with ID: " << studentId << " was not found." << endl;
 }
 
-void Roster::printAll()
-{
-    for(int i = 0; i < 4; i++) {
-        // If classRosterArray element is present then print student data.
-        if (classRosterArray[i] != nullptr) {
-            classRosterArray[i]->print();
-        }
-    }
-}
+
 
 void Roster::printAverageDaysInCourse(string studentID)
 {
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < 5; i++) {
         if (classRosterArray[i] != nullptr && classRosterArray[i]->getStudentId() == studentID) {
             cout << "Student " << classRosterArray[i]->getStudentId() << " has an average of  " << classRosterArray[i]->getAverageDaysInCourse() << " days per course for their remaining three courses." << endl;
             return;
@@ -87,12 +90,13 @@ void Roster::printInvalidEmails()
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 {
     bool notFound = true;
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < 5; i++) {
         // If classRosterArray element is present and said student degree program
         // matches degreeProgram print that students data.
         if (classRosterArray[i] != nullptr && classRosterArray[i]->getDegreeProgram() == degreeProgram) {
             notFound = false;
             classRosterArray[i]->print();
+            cout << "\n";
         }
     }
 
