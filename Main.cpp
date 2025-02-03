@@ -82,10 +82,10 @@ int main() {
 		}
 	
 		if (rAddDat[8] == "SECURITY") {
-			degreeProgram = DegreeProgram::SOFTWARE;
+			degreeProgram = DegreeProgram::SECURITY;
 		}
 		else if (rAddDat[8] == "NETWORK") {
-			degreeProgram = DegreeProgram::SOFTWARE;
+			degreeProgram = DegreeProgram::NETWORK;
 		}
 		else if (rAddDat[8] == "SOFTWARE") {
 			degreeProgram = DegreeProgram::SOFTWARE;
